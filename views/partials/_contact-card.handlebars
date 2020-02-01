@@ -1,3 +1,5 @@
+{{#each contacts}}
+
 <div class="card">
   <div class="card-content">
     <div class="media">
@@ -7,19 +9,18 @@
         </figure>
       </div>
       <div class="media-content">
-        <p class="title is-4">John Smith</p>
+        <p class="title is-4">{{name}}</p>
 
-        <p class="subtitle is-6">+91-8130532100</p>
+        <p class="subtitle is-6">{{phone}}</p>
       </div>
     </div>
 
     <div class="content">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Phasellus nec iaculis mauris.
+      {{comments}}
       <br>
-      <a>johnsmith@gmail.com</a>
+      <a>{{email}}</a>
       <br>
-      <time datetime="2016-1-1">1 Jan 2016</time>
+      <time datetime="2016-1-1">Birthday: {{dob}}</time>
       <br>
     </div>
     <div class="container">
@@ -28,3 +29,13 @@
     </div>
   </div>
 </div>
+
+{{else}}
+
+<div class="card">
+  <div class="card-content">
+    <p class="subtitle">No contacts found!</p>
+  </div>
+</div>
+
+{{/each}}

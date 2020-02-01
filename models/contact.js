@@ -15,12 +15,12 @@ const ContactSchema = new Schema({
         required: false,
         default: 'No email available'
     },
-    number: {
+    phone: {
         type: Number,
         required: true
     },
     dob: {
-        type: Date,
+        type: String,
         required: false
     },
     contactType: {

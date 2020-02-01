@@ -9,6 +9,10 @@ const mongoose = require('mongoose');
 const app = express();
 const PORT = 3000;
 
+// Load contacts model
+require('./models/contact')
+const Contact = mongoose.model('contacts');
+
 /* After installing MongoDB, setup MongoDB by using:
  $ mongod --directoryperdb --dbpath /path/to/db
  Create directory as data/db for storing */
@@ -37,12 +41,35 @@ app.set('view engine', 'handlebars'); // Setting the view engine to handlebars
 app.use(methodOverride('_method'));
 
 app.get('/', (req, res) => {
-    res.render('home');
+    Contact.find()
+    .sort({name: 'desc'})
+    .then(contacts => {
+        res.render('home', {
+            contacts: contacts
+        })
+    })
 });
 
 app.post('/', (req, res) => {
     console.log(req.body);
-    res.render('home');
+
+    const newContact = {
+        name: req.body.name,
+        email: req.body.email,
+        phone: req.body.phone,
+        dob: req.body.dob,
+        contactType: req.body.contactType,
+        existing: req.body.existing,
+        comments: req.body.comments
+    }
+
+    new Contact(newContact)
+        .save()
+        .then(contacts => {
+            res.render('home', {
+                contacts: contacts
+            });
+        });
 });
 
-app.listen(`${PORT}`);
+app.listen(`${PORT}`, () => console.log(`Connected on localhost:${PORT}`));

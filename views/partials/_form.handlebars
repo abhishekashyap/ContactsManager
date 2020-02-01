@@ -6,7 +6,7 @@
         <div class="field-body">
             <div class="field">
                 <p class="control is-expanded has-icons-left">
-                    <input class="input" type="text" placeholder="Name" name="name">
+                    <input class="input" type="text" placeholder="Name" name="name" required>
                     <span class="icon is-small is-left">
                         <i class="fas fa-user"></i>
                     </span>
@@ -37,7 +37,7 @@
                         </a>
                     </p>
                     <p class="control is-expanded">
-                        <input class="input" type="tel" placeholder="Your phone number" maxlength="10" name="phone">
+                        <input class="input" type="tel" placeholder="Your phone number" maxlength="10" name="phone" required>
                     </p>
                 </div>
                 <p class="help">Do not enter the first zero</p>
@@ -71,7 +71,7 @@
             <div class="field is-narrow">
                 <div class="control">
                     <div class="select is-fullwidth">
-                        <select name="type">
+                        <select name="contactType">
                             <option>Personal</option>
                             <option>Business</option>
                             <option>Other</option>
@@ -94,7 +94,7 @@
                         Yes
                     </label>
                     <label class="radio">
-                        <input type="radio" value="false" name="existing">
+                        <input type="radio" value="false" name="existing" checked>
                         No
                     </label>
                 </div>
