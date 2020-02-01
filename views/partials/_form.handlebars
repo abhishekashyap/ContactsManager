@@ -1,7 +1,7 @@
 <form action="">
     <div class="field is-horizontal">
         <div class="field-label is-normal">
-            <label class="label">From</label>
+            <label class="label">Personal</label>
         </div>
         <div class="field-body">
             <div class="field">
@@ -37,7 +37,7 @@
                         </a>
                     </p>
                     <p class="control is-expanded">
-                        <input class="input" type="tel" placeholder="Your phone number">
+                        <input class="input" type="tel" placeholder="Your phone number" maxlength="10">
                     </p>
                 </div>
                 <p class="help">Do not enter the first zero</p>
@@ -53,8 +53,11 @@
         </div>
         <div class="field-body">
             <div class="field is-narrow">
-                <div class="control">
-                    <input type="date" class="input">
+                <div class="control has-icons-left">
+                    <input type="date" class="input" min="1900-01-01">
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-calendar"></i>
+                    </span>
                 </div>
             </div>
         </div>
@@ -81,7 +84,7 @@
 
     <div class="field is-horizontal">
         <div class="field-label">
-            <label class="label">Existing contact?</label>
+            <label class="label">Existing</label>
         </div>
         <div class="field-body">
             <div class="field is-narrow">
@@ -99,7 +102,7 @@
         </div>
     </div>
 
-    <div class="field is-horizontal">
+    {{!-- <div class="field is-horizontal">
         <div class="field-label is-normal">
             <label class="label">Subject</label>
         </div>
@@ -113,16 +116,16 @@
                 </p>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <div class="field is-horizontal">
         <div class="field-label is-normal">
-            <label class="label">Question</label>
+            <label class="label">Comments</label>
         </div>
         <div class="field-body">
             <div class="field">
                 <div class="control">
-                    <textarea class="textarea" placeholder="Explain how we can help you"></textarea>
+                    <textarea class="textarea" placeholder="Add comments"></textarea>
                 </div>
             </div>
         </div>
@@ -135,8 +138,11 @@
         <div class="field-body">
             <div class="field">
                 <div class="control">
-                    <button class="button is-primary">
-                        Send message
+                    <button type="submit" class="button is-primary">
+                        Add contact
+                    </button>
+                    <button type="reset" class="button is-danger">
+                        Cancel
                     </button>
                 </div>
             </div>
