@@ -10,7 +10,7 @@ const app = express();
 const PORT = 3000;
 
 // Load contacts model
-require('./models/contact')
+require('./models/Contact')
 const Contact = mongoose.model('contacts');
 
 /* After installing MongoDB, setup MongoDB by using:
@@ -34,7 +34,10 @@ app.use(express.json());
 // Serving static files
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.engine('handlebars', exphbs()); // Initializing the handlebars view engine
+// Handlebars middleware
+app.engine('handlebars', exphbs({
+    defaultLayout: 'main'
+})); // Initializing the handlebars view engine
 app.set('view engine', 'handlebars'); // Setting the view engine to handlebars
 
 // Method override middleware
@@ -42,7 +45,7 @@ app.use(methodOverride('_method'));
 
 app.get('/', (req, res) => {
     Contact.find()
-    .sort({name: 'desc'})
+    // .sort({name: 'desc'})
     .then(contacts => {
         res.render('home', {
             contacts: contacts
@@ -65,11 +68,7 @@ app.post('/', (req, res) => {
 
     new Contact(newContact)
         .save()
-        .then(contacts => {
-            res.render('home', {
-                contacts: contacts
-            });
-        });
+        .then(contacts => res.redirect('/'));
 });
 
 app.listen(`${PORT}`, () => console.log(`Connected on localhost:${PORT}`));
