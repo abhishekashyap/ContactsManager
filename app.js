@@ -45,12 +45,12 @@ app.use(methodOverride('_method'));
 
 app.get('/', (req, res) => {
     Contact.find()
-    // .sort({name: 'desc'})
-    .then(contacts => {
-        res.render('home', {
-            contacts: contacts
+        // .sort({name: 'desc'})
+        .then(contacts => {
+            res.render('home', {
+                contacts: contacts
+            })
         })
-    })
 });
 
 app.post('/', (req, res) => {
@@ -69,6 +69,14 @@ app.post('/', (req, res) => {
     new Contact(newContact)
         .save()
         .then(contacts => res.redirect('/'));
+});
+
+app.delete('/:id', (req, res) => {
+    Contact.deleteOne({ _id: req.params.id })
+        .then(() => { 
+            console.log('Deleted entry');
+            res.redirect('/');
+         })
 });
 
 app.listen(`${PORT}`, () => console.log(`Connected on localhost:${PORT}`));

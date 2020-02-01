@@ -23,8 +23,11 @@
       <br>
     </div>
     <div class="container">
-      <button class="button is-dark">Edit</button>
-      <button class="button is-danger">Delete</button>
+      <form action="/{{id}}?_method=DELETE" method="post">
+        <button class="button is-dark">Edit</button>
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" class="button is-danger" value="Delete">
+      </form>
     </div>
   </div>
 </div>
