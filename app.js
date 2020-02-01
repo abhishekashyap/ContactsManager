@@ -9,6 +9,9 @@ const mongoose = require('mongoose');
 const app = express();
 const PORT = 3000;
 
+/* After installing MongoDB, setup MongoDB by using:
+ $ mongod --directoryperdb --dbpath /path/to/db
+ Create directory as data/db for storing */
 mongoose.connect('mongodb://localhost/contacts-dev', {
     // To remove warnings
     useNewUrlParser: true,
