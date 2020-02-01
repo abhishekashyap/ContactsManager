@@ -1,12 +1,23 @@
 'use strict';
-'use strict';
 
 const express = require('express');
 const exphbs = require('express-handlebars');
 const path = require('path');
 const methodOverride = require('method-override');
+const mongoose = require('mongoose');
 
 const app = express();
+const PORT = 3000;
+
+mongoose.connect('mongodb://localhost/contacts-dev', {
+    // To remove warnings
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
+    .then(() => {
+        console.log('MongoDB connected!');
+    })
+    .catch(err => console.log(err))
 
 // Body parser middleware
 // Body parser in this case allows us to access whatever is submitted through the form
@@ -31,5 +42,4 @@ app.post('/', (req, res) => {
     res.render('home');
 });
 
-const PORT = 3000;
 app.listen(`${PORT}`);
