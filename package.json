@@ -2,9 +2,9 @@
   "name": "contactscrud",
   "version": "1.0.0",
   "description": "Contact storage system based on MongoDB and Express.",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
