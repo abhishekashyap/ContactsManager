@@ -7,7 +7,7 @@ const methodOverride = require('method-override');
 const mongoose = require('mongoose');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 
 // Load contacts model
 require('./models/Contact')
