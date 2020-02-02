@@ -7,16 +7,19 @@ const methodOverride = require('method-override');
 const mongoose = require('mongoose');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Load contacts model
 require('./models/Contact')
 const Contact = mongoose.model('contacts');
 
+// Load config
+const db = require('./config/database');
+
 /* After installing MongoDB, setup MongoDB by using:
  $ mongod --directoryperdb --dbpath /path/to/db
  Create directory as data/db for storing */
-mongoose.connect('mongodb://localhost/contacts-dev', {
+mongoose.connect(db.mongoURI, {
     // To remove warnings
     useNewUrlParser: true,
     useUnifiedTopology: true
