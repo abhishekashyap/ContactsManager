@@ -21,8 +21,7 @@ const db = require('./config/database');
  Create directory as data/db for storing */
 mongoose.connect(db.mongoURI, {
     // To remove warnings
-    useNewUrlParser: true,
-    useUnifiedTopology: true
+    useNewUrlParser: true
 })
     .then(() => {
         console.log('MongoDB connected!');
