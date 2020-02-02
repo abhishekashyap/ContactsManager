@@ -8,6 +8,16 @@ The is single page application based on
 * MongoDB (Database)
 * Handlebars (Templating engine)
 
+### Prerequisites
+
+* Mongo daemon
+
+* Temprorily required devDependency of an older version of Handlebars
+
+```
+npm i -D handlebars@4.5.0
+```
+
 ### Installing
 
 Clone the repo then use
@@ -20,12 +30,6 @@ To start the app use
 
 ```
 npm start
-```
-
-Temprorily required devDependency
-
-```
-npm i -D handlebars@4.5.0
 ```
 
 <!-- ## Screenshots
