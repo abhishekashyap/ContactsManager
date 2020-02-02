@@ -13,13 +13,19 @@ The is single page application based on
 Clone the repo then use
 
 ```
-$npm install
+npm install
 ```
 
 To start the app use
 
 ```
-$npm start
+npm start
+```
+
+Temprorily required devDependency
+
+```
+npm i -D handlebars@4.5.0
 ```
 
 <!-- ## Screenshots
