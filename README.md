@@ -1,6 +1,8 @@
 # ContactsCRUD
 Contact storage based on MongoDB and express
 
+[View live demo here](https://contactscrud.herokuapp.com)
+
 ## Getting Started
 
 The is single page application based on
