@@ -19,18 +19,17 @@ const ContactSchema = new Schema({
         type: Number,
         required: true
     },
+    avatar: {
+        type: String,
+        required: false
+    },
     dob: {
         type: String,
         required: false
     },
-    contactType: {
+    gender: {
         type: String,
         required: true
-    },
-    existingContact: {
-        type: Boolean,
-        required: true,
-        default: false
     },
     comments: {
         type: String,
