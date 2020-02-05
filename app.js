@@ -5,6 +5,7 @@ const exphbs = require('express-handlebars');
 const path = require('path');
 const methodOverride = require('method-override');
 const mongoose = require('mongoose');
+const fetch = require('node-fetch');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -62,23 +63,44 @@ app.post('/', (req, res) => {
         name: req.body.name,
         email: req.body.email,
         phone: req.body.phone,
+        avatar: '',
         dob: req.body.dob,
-        contactType: req.body.contactType,
+        gender: req.body.gender,
         existing: req.body.existing,
         comments: req.body.comments
     }
 
-    new Contact(newContact)
-        .save()
-        .then(contacts => res.redirect('/'));
+    if (newContact.gender == 'male') {
+        fetch('https://avatar-links.herokuapp.com/svg?gender=man')
+            .then((resData) => resData.text())
+            .then((img) => {
+                newContact.avatar = img;
+            })
+            .then(() => {
+                new Contact(newContact)
+                    .save()
+                    .then(contacts => res.redirect('/'));
+            });
+    } else {
+        fetch('https://avatar-links.herokuapp.com/svg?gender=girl')
+            .then((resData) => resData.text())
+            .then((img) => {
+                newContact.avatar = img;
+            })
+            .then(() => {
+                new Contact(newContact)
+                    .save()
+                    .then(contacts => res.redirect('/'));
+            });
+    }
 });
 
 app.delete('/:id', (req, res) => {
     Contact.deleteOne({ _id: req.params.id })
-        .then(() => { 
+        .then(() => {
             console.log('Deleted entry');
             res.redirect('/');
-         })
+        })
 });
 
 app.listen(`${PORT}`, () => console.log(`Connected on localhost:${PORT}`));
