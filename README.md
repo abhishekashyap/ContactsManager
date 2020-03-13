@@ -1,9 +1,9 @@
 # ContactsCRUD
 
-<p align="center">
+<div align="center">
 [![Build Status](https://travis-ci.com/abhishekashyap/ContactsCRUD.svg?branch=master)](https://travis-ci.com/abhishekashyap/ContactsCRUD)
 ![GitHub repo size](https://img.shields.io/github/repo-size/abhishekashyap/ContactsCRUD)
-</p>
+</div>
 
 Contact storage based on MongoDB and express
 
