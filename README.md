@@ -1,8 +1,9 @@
 # ContactsCRUD
 
+<p style="text-align: center;">
 [![Build Status](https://travis-ci.com/abhishekashyap/ContactsCRUD.svg?branch=master)](https://travis-ci.com/abhishekashyap/ContactsCRUD)
-[![Repo Size](https://img.shields.io/github/repo-size/abhishekashyap/ContactsCRUD)](https://github.com/abhishekashyap/ContactsCRUD)
-
+![GitHub repo size](https://img.shields.io/github/repo-size/abhishekashyap/ContactsCRUD)
+</p>
 
 Contact storage based on MongoDB and express
 
@@ -11,15 +12,16 @@ Contact storage based on MongoDB and express
 ## Getting Started
 
 The is single page application based on
-* Express (Server)
-* MongoDB (Database)
-* Handlebars (Templating engine)
+
+- Express (Server)
+- MongoDB (Database)
+- Handlebars (Templating engine)
 
 ### Prerequisites
 
-* Mongo daemon
+- Mongo daemon
 
-* Temprorily required devDependency of an older version of Handlebars
+- Temprorily required devDependency of an older version of Handlebars
 
 ```
 npm i -D handlebars@4.5.0
@@ -45,12 +47,11 @@ npm start
 ![Playlist](screenshots/yellow5.png "Playlist page")
 ![NowPlaying](screenshots/pink5.png "Now playing") -->
 
-
 ## Built With
 
-* [Express](https://expressjs.com/)
-* [MongoDB](https://www.mongodb.com/)
-* [Handlebars](https://handlebarsjs.com/)
+- [Express](https://expressjs.com/)
+- [MongoDB](https://www.mongodb.com/)
+- [Handlebars](https://handlebarsjs.com/)
 
 ## Contributing
 
@@ -58,7 +59,7 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduc
 
 ## Authors
 
-* **Abhishek Kashyap** - *Initial work* - [abhishekashyap](https://github.com/abhishekashyap)
+- **Abhishek Kashyap** - _Initial work_ - [abhishekashyap](https://github.com/abhishekashyap)
 
 ## License
 
