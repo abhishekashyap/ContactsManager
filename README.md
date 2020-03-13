@@ -1,4 +1,7 @@
 # ContactsCRUD
+
+[![Build Status](https://travis-ci.com/abhishekashyap/ContactsCRUD.svg?branch=master)](https://travis-ci.com/abhishekashyap/ContactsCRUD)
+
 Contact storage based on MongoDB and express
 
 [View live demo here](https://contactscrud.herokuapp.com)
